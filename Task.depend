@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1604871471 source:d:\c++ task\task\main.cpp
+	<iostream>
+	<thread>
+	<mutex>
+	<queue>
+	<string.h>
+	<strings.h>
+	<cstring>
+	<strstream>
+	<sstream>
+	"threadmanager.h"
+
+1604873820 d:\c++ task\task\threadmanager.h
+	"ThreadHandler.h"
+
+1604879549 d:\c++ task\task\threadhandler.h
+	"taskblock.h"
+	"safequeue.h"
+
+1604876542 d:\c++ task\task\taskblock.h
+	<string>
+	"md5.h"
+
+1604939723 d:\c++ task\task\safequeue.h
+	<queue>
+	<mutex>
+
+1604874680 d:\c++ task\task\md5.h
+	<stdio.h>
+	<string.h>
+
