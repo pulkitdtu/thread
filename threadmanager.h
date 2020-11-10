@@ -45,13 +45,9 @@ void ThreadManager::manage()
     {
         //ThreadHandler h = arr[i];
         arr[i].stop();
+        arr[i].join();
     }
-    for(int i= 0; i< processor_count; i++)
-    {
-        //ThreadHandler h = arr[i];
-        if(arr[i].joinable())
-            arr[i].join();
-    }
+
     string result = blocks_queue_main.getResult();
     if(result.length() > 0)
     {

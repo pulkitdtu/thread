@@ -24,16 +24,16 @@ class ThreadHandler
 
 void ThreadHandler::process_task_block()
 {
-    unsigned int i =  100000;
+
     while(!stop_flag)
     {
         {// locked area of the code
 
-                auto block = source_queue.dequeue();
+                TaskBlock block = source_queue.dequeue();
                 cout<<"\n entered block";
                 //if(!block.empty())
                 //std::lock_guard<mutex> guard(mutexGlobal);
-                    cout<<endl<<this_thread::get_id()<<" id  thread executing : "<<endl;
+                    cout<<endl<<this_thread::get_id()<<" id  thread executing : "<< block.arr[0] <<" to " <<block.arr[999] <<endl;
                     //process block
                     string s = block.process(source_queue.getHash());
                     if(s.length()>0)
@@ -48,6 +48,7 @@ void ThreadHandler::process_task_block()
 void ThreadHandler::stop()
 {
     stop_flag = true;
+
 }
 class a {};
 void b(a a1)
@@ -63,8 +64,8 @@ void ThreadHandler::set_source_queue(SafeQueue<TaskBlock>& q)
 
 void ThreadHandler::join()
 {
-
-    thread1->join();
+    if(thread1->joinable())
+        thread1->join();
 }
 
 void ThreadHandler::initialize()
