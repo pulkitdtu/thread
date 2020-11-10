@@ -83,9 +83,17 @@ int main()
     //t3.join();
     //t4.join();//t1.join();
     ThreadManager::manage();
+//    SequenceGenerator::fill_ASCII_range(static_cast<int>('a'), static_cast<int>('z'));
+//    SequenceGenerator::fill_ASCII_range((int)'A',(int)'Z');
+//    SequenceGenerator::set_length(1,5);
+    //for(long int i = 52*52; i>0; i--)
+    //cout<<endl<<
+    //SequenceGenerator::next();
+
     string s;
     cin>>s;
-
+    //for(long int i = 52; i>0; i--)
+    //cout<<endl<<SequenceGenerator::next();
     cin>>s;
     cout<< "string entered : "<<s;
     return 0;

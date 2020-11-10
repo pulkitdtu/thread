@@ -2,13 +2,15 @@
 #define TASKBLOCK_H_INCLUDED
 #include<string>
 #include "md5.h"
+
 using namespace std;
 struct TaskBlock
 {
     std::array<string, 10000> arr;
     string process(const string& hash);
-    void fill();
+    void push(const string& s, unsigned short index){arr[index]=s; }
     bool empty(){return arr.empty();}
+
 };
 
 string TaskBlock::process(const string& hash)
@@ -24,5 +26,7 @@ string TaskBlock::process(const string& hash)
     // nothing found
     return "";
 }
+
+
 
 #endif // TASKBLOCK_H_INCLUDED

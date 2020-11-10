@@ -31,15 +31,13 @@ void ThreadHandler::process_task_block()
 
                 auto block = source_queue.dequeue();
                 cout<<"\n entered block";
-                if(!block.empty())
-                {//std::lock_guard<mutex> guard(mutexGlobal);
+                //if(!block.empty())
+                //std::lock_guard<mutex> guard(mutexGlobal);
                     cout<<endl<<this_thread::get_id()<<" id  thread executing : "<<endl;
                     //process block
-                    string s = block.process("  a");
+                    string s = block.process(source_queue.getHash());
                     if(s.length()>0)
-                        source_queue.setResult("hello");
-                }
-
+                        source_queue.setResult(s);
         }
 
     }

@@ -36,10 +36,15 @@ public:
   {
       result =s;
   }
+  string& getHash()
+  {
+      return hash;
+  }
 private:
   static std::queue<T> q;
   static std::mutex static_mutex;
   static std::string result;
+  static std::string hash;
 };
 template <class T>
 std::mutex SafeQueue<T>::static_mutex;
@@ -47,4 +52,6 @@ template <class T>
 std::queue<T> SafeQueue<T>::q;
 template <class T>
 std::string SafeQueue<T>::result = "";
+template <class T>
+string SafeQueue<T>::hash = "test_string_hash";
 #endif // SAFEQUEUE_H_INCLUDED
