@@ -34,11 +34,15 @@ public:
   }
   void setResult(string s)
   {
-      result =s;
+      result =string(s);
   }
-  string& getHash()
+  string getHash()
   {
       return hash;
+  }
+  void setHash(string _hash)
+  {
+      hash = string(_hash);
   }
 private:
   static std::queue<T> q;
@@ -53,5 +57,5 @@ std::queue<T> SafeQueue<T>::q;
 template <class T>
 std::string SafeQueue<T>::result = "";
 template <class T>
-string SafeQueue<T>::hash = "test_string_hash";
+string SafeQueue<T>::hash = "e1faffb3e614e6c2fba74296962386b7";
 #endif // SAFEQUEUE_H_INCLUDED

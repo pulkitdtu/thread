@@ -24,7 +24,7 @@ class ThreadHandler
 
 void ThreadHandler::process_task_block()
 {
-
+    string hash1 = source_queue.getHash();
     while(!stop_flag)
     {
         {// locked area of the code
@@ -35,7 +35,7 @@ void ThreadHandler::process_task_block()
                 //std::lock_guard<mutex> guard(mutexGlobal);
                     cout<<endl<<this_thread::get_id()<<" id  thread executing : "<< block.arr[0] <<" to " <<block.arr[999] <<endl;
                     //process block
-                    string s = block.process(source_queue.getHash());
+                    string s = block.process(hash1);
                     if(s.length()>0)
                         source_queue.setResult(s);
         }

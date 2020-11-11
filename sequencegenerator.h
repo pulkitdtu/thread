@@ -65,8 +65,11 @@ public:
     }
     static void set_length(unsigned short u_min_length, unsigned short u_max_length)
     {
+        if(u_min_length > u_max_length)
+            std::swap(u_min_length, u_max_length);
         min_length = u_min_length;
         max_length = u_max_length;
+
         if(min_length > 1)
         {
             string temp(1, largest_char);

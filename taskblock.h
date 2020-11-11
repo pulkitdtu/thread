@@ -6,6 +6,7 @@
 using namespace std;
 struct TaskBlock
 {
+    MD5 algo;
     std::array<string, 10000> arr;
     string process(const string& hash);
     void push(const string& s, unsigned short index){arr[index]=s; }
@@ -16,12 +17,15 @@ struct TaskBlock
 string TaskBlock::process(const string& hash)
 {
     cout<<" \t process called \n";
-     static MD5 algo;
     for(const string& s :arr)
     {
     string digest = string(algo.digestString(const_cast<char*> (s.c_str())));
     if(hash == digest)
+    {
+        cout<<"\t\t\t\t\t__________________________ result found" << s;
         return s;
+    }
+
     }
     // nothing found
     return "";

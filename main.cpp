@@ -64,7 +64,7 @@ unsigned short  i = 10000;
     }
     stop = true;
     }
-int main()
+int main(int argc, char* argv[])
 {
     cout << "Hello world!" << endl;
     cout << "Hello world again" << endl;//char a;
@@ -82,20 +82,22 @@ int main()
     //t2.join();
     //t3.join();
     //t4.join();//t1.join();
+    ThreadManager::command_line(argc, argv);
     ThreadManager::manage();
-//    SequenceGenerator::fill_ASCII_range(static_cast<int>('a'), static_cast<int>('z'));
-//    SequenceGenerator::fill_ASCII_range((int)'A',(int)'Z');
-//    SequenceGenerator::set_length(1,5);
+    //SequenceGenerator::fill_ASCII_range(static_cast<int>('a'), static_cast<int>('z'));
+    //SequenceGenerator::fill_ASCII_range((int)'A',(int)'Z');
+    //SequenceGenerator::set_length(1,3);
     //for(long int i = 52*52; i>0; i--)
-    //cout<<endl<<
-    //SequenceGenerator::next();
+    //cout<<endl<<SequenceGenerator::next();
 
-    string s;
-    cin>>s;
+
+
+    string s99;
+    cin>>s99;
     //for(long int i = 52; i>0; i--)
     //cout<<endl<<SequenceGenerator::next();
-    cin>>s;
-    cout<< "string entered : "<<s;
+    cin>>s99;
+    cout<< "string entered : "<<s99;
     return 0;
 }
 
