@@ -11,9 +11,12 @@ ASCII value of smaller element-ASCII value of largest element in range
 
 
 Command line arguments: 1 3        65-90:97-122    e1faffb3e614e6c2fba74296962386b7
+
 Explanation for args  : key length  range          128 bit hexdecimal hash to be decoded by the keys
 
+
 Default arguments     : 1 3        a-z:A-Z    e1faffb3e614e6c2fba74296962386b7
+
 Default answer        : AAA for the hash code e1faffb3e614e6c2fba74296962386b7
 
 
